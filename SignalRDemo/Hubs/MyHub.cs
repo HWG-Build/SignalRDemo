@@ -2,6 +2,8 @@
 using Microsoft.AspNet.SignalR;
 using SignalRDemo.Services;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System;
 
 namespace SignalRDemo.Hubs
 {
@@ -10,26 +12,22 @@ namespace SignalRDemo.Hubs
         public void AddReferral(string firstname, string lastname, string sex, string dob)
         {
             ReferralService.Save(firstname, lastname, sex, dob);
+            int referrals = ReferralService.GetCount();
+            Clients.All.loadReferrals(referrals);
         }
 
         public void RemoveReferral()
         {
             ReferralService.Delete();
-        }
-
-        public void GetCount()
-        {
-            Clients.All.LoadReferral(ReferralService.GetCount());
+            int referrals = ReferralService.GetCount();
+            Clients.All.loadReferrals(referrals);
         }
 
         public override Task OnConnected()
         {
             string name = Context.ConnectionId;
             Clients.All.addUserIcon(name);
-
-            int referrals = ReferralService.GetCount();
-            Clients.All.loadReferrals(referrals);
-
+            GetCount();
             return base.OnConnected();
         }
 
@@ -38,10 +36,15 @@ namespace SignalRDemo.Hubs
             string name = Context.ConnectionId;
             Clients.All.removeUserIcon(name);
 
-            int referrals = ReferralService.GetCount();
-            Clients.All.loadReferrals(referrals);
+            GetCount();
 
             return base.OnDisconnected(b);
+        }
+
+        private void GetCount()
+        {
+            int referrals = ReferralService.GetCount();
+            Clients.All.loadReferrals(referrals);
         }
     }
 }

@@ -7,43 +7,40 @@
 </head>
 <body>
     <div class="container">
-        <div class="col-lg-7"><h1 id="counter">0</h1></div>
+        <div class="col-lg-7">
+            <h1 id="counter">0</h1>
+            <form>
+                <div class="form-group">
+                    <label for="FirstNameTextBox">First Name:</label>
+                    <input type="text" class="form-control" id="FirstNameTextBox" placeholder="First Name" />
+                </div>
+                <div class="form-group">
+                    <label for="LastNameTextBox">First Name:</label>
+                    <input type="text" class="form-control" id="LastNameTextBox" placeholder="Last Name" />
+                </div>
+                <div class="form-group">
+                    <label for="GenderDropDown">Gender:</label>
+                    <select class="form-control" id="GenderDropDown">
+                        <option>----</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="LastNameTextBox">DOB:</label>
+                    <input type="date" class="form-control" id="DOBDateTime" placeholder="Date Of Birth:" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" id="Submit">Submit</button>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-danger" id="Remove">Remove</button>
+                </div>
+            </form>
+        </div>
         <div class="label-primary col-lg-5" id="panelHead"></div>
     </div>
-    <form>
-        <div class="form-group">
-            <label for="FirstNameTextBox">First Name:</label>
-            <input type="text" class="form-control" id="FirstNameTextBox" placeholder="First Name" />
-        </div>
-        <div class="form-group">
-            <label for="LastNameTextBox">First Name:</label>
-            <input type="text" class="form-control" id="LastNameTextBox" placeholder="Last Name" />
-        </div>
-        <div class="form-group">
-            <label for="GenderDropDown">Gender:</label>
-            <select class="form-control" id="GenderDropDown">
-                <option>----</option>
-                <option>Male</option>
-                <option>Female</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="LastNameTextBox">DOB:</label>
-            <input type="date" class="form-control" id="LDOBDateTime" placeholder="Date Of Birth:" />
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" id="Submit">Button</button>
-        </div>
-    </form>
-    <form>
-        <div class="form-group">
-            <label for="IdTextBox">What referral Id do you want to delete:</label>
-            <input type="text" class="form-control" id="FirstNameTextBox" placeholder="First Name" />
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" id="Submit">Button</button>
-        </div>
-    </form>
+
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 
 namespace SignalRDemo.Services
@@ -34,11 +35,17 @@ namespace SignalRDemo.Services
 
         public static void Delete()
         {
-            referrals.Remove(referrals[referrals.Count-1]);
+            if(referrals.Count>0)
+                referrals.Remove(referrals[referrals.Count-1]);
         }
 
         public static int GetCount()
         {
+            foreach (var item in referrals)
+            {
+                Debug.WriteLine(item.Id + ". " + item.firstname + " " + item.lastname);
+            }
+            Debug.WriteLine("--------------------------------");
             return referrals.Count;
         }
     }
