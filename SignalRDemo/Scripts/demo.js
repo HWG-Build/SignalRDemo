@@ -15,13 +15,8 @@
     }
 
     $.connection.hub.start().done(function() {
-        //myhub.server.OnConnected();
-       
+        
     });
-
-    //$.connection.hub.stop(function() {
-    //   myhub.server.OnDisconnected();
-    //});
 });
 
 $(document).ready(function () {
