@@ -32,6 +32,7 @@
                 $('#GenderDropDown').selected,
                 $('#DOBDateTime').val()
                 );
+            myhub.server.GetCount();
         });
     });
 

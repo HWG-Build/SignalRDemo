@@ -17,6 +17,11 @@ namespace SignalRDemo.Hubs
             ReferralService.Delete();
         }
 
+        public void GetCount()
+        {
+            Clients.All.LoadReferral(ReferralService.GetCount());
+        }
+
         public override Task OnConnected()
         {
             string name = Context.ConnectionId;
