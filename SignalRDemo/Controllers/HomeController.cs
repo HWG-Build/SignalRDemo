@@ -11,9 +11,7 @@ namespace SignalRDemo.Controllers
 
         public ActionResult Referral()
         {
-            ViewBag.Message = "Add a referral.";
-
-            return View();
+            return View("Referral");
         }
     }
 }

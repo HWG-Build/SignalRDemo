@@ -7,52 +7,50 @@ namespace SignalRDemo.Services
 {
     public class ReferralService
     {
-        List<Referral> referrals = new List<Referral>();
+        
+        public static List<Referral> referrals = new List<Referral>();
 
-        public List<Referral> Load()
+        public static int Load()
         {
-            var referrals = new List<Referral>();
-
-            return referrals;
+            return referrals.Count;
         }
 
-        public void Save(Referral referral)
+        public static void Save(string first, string last, string sex, string birthday)
         {
-            if(referral != null)
+            Referral referral = new Referral()
+            {
+                Id = referrals.Count+1,
+                firstname = first,
+                lastname = last,
+                gender = sex,
+                dob = birthday
+            };
+            
+            if (referral != null)
             {
                 referrals.Add(referral);
             }
         }
 
-        public string Delete(Guid id)
+        public static void Delete()
         {
-            if (id != null)
-            {
-                foreach(var item in referrals)
-                {
-                    if(item.Id == id)
-                    {
-                        referrals.Remove(item);
-                        break;
-                    }
-                }
-                return "Referral does not exist.";
-            }
-            else
-            {
-                return "Referral does not exist.";
-            }
+            referrals.Remove(referrals[referrals.Count-1]);
+        }
 
+        public static int GetCount()
+        {
+            return referrals.Count;
         }
     }
 
+
     public class Referral
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
         public string gender { get; set; }
-        public DateTime dob { get; set; }
+        public string dob { get; set; }
     }
 }
 
