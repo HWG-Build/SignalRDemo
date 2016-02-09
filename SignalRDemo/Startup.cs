@@ -1,6 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
+
 [assembly: OwinStartupAttribute(typeof(SignalRDemo.Startup))]
 namespace SignalRDemo
 {
@@ -8,9 +9,10 @@ namespace SignalRDemo
     {
         public void Configuration(IAppBuilder app)
         {
-            app.MapSignalR();
+            
             ConfigureAuth(app);
             
+            app.MapSignalR();
         }
     }
 }

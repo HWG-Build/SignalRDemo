@@ -13,5 +13,13 @@ namespace SignalRDemo.Controllers
         {
             return View("Referral");
         }
+
+        [Authorize]
+        public ActionResult AuthorizeEchoHub()
+        {
+            ViewBag.Message = "Only an authenticated user can connect to this Hub.";
+
+            return View();
+        }
     }
 }

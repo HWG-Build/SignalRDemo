@@ -167,6 +167,6 @@ D:\Git Repository\SignalRDemo\SignalRDemo\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Git Repository\SignalRDemo\SignalRDemo\bin\Microsoft.Owin.Security.Google.xml
 D:\Git Repository\SignalRDemo\SignalRDemo\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Git Repository\SignalRDemo\SignalRDemo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Git Repository\SignalRDemo\SignalRDemo\obj\Debug\SignalRDemo.csprojResolveAssemblyReference.cache
 D:\Git Repository\SignalRDemo\SignalRDemo\obj\Debug\SignalRDemo.dll
 D:\Git Repository\SignalRDemo\SignalRDemo\obj\Debug\SignalRDemo.pdb
+D:\Git Repository\SignalRDemo\SignalRDemo\obj\Debug\SignalRDemo.csprojResolveAssemblyReference.cache

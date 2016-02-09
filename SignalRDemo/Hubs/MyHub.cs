@@ -7,6 +7,7 @@ using System;
 
 namespace SignalRDemo.Hubs
 {
+    [Authorize]
     public class MyHub : Hub
     {
         public void AddReferral(string firstname, string lastname, string sex, string dob)
@@ -25,7 +26,7 @@ namespace SignalRDemo.Hubs
 
         public override Task OnConnected()
         {
-            string name = Context.ConnectionId;
+            string name = Context.User.Identity.Name;
             Clients.All.addUserIcon(name);
             GetCount();
             return base.OnConnected();
@@ -33,7 +34,7 @@ namespace SignalRDemo.Hubs
 
         public override Task OnDisconnected(bool b)
         {
-            string name = Context.ConnectionId;
+            string name = Context.User.Identity.Name;
             Clients.All.removeUserIcon(name);
 
             GetCount();
