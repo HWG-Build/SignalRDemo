@@ -28,6 +28,8 @@ namespace SignalRDemo.Hubs
         {
             string name = Context.User.Identity.Name;
             Clients.All.addUserIcon(name);
+            Debug.WriteLine(Context.User.Identity.AuthenticationType);
+            Debug.WriteLine(Context.User.Identity.IsAuthenticated);
             GetCount();
             return base.OnConnected();
         }
@@ -35,6 +37,7 @@ namespace SignalRDemo.Hubs
         public override Task OnDisconnected(bool b)
         {
             string name = Context.User.Identity.Name;
+
             Clients.All.removeUserIcon(name);
 
             GetCount();
